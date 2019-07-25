@@ -18,11 +18,11 @@ application = Flask(__name__)
 def hello():
     
     producer = KafkaProducer(bootstrap_servers=ip)
-    producer.send('test', b"big boss sea started")
+    producer.send('test', b"producer message-hello")
     time.sleep(10)
   
 
     return "Message sent"
 
 if __name__ == "__main__":
-    application.run(host='0.0.0.0', port=8081)
+    application.run(host='0.0.0.0', port=8080)
