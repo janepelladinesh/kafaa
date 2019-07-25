@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+import threading, logging, time
 import sys
 
 from kafka import  KafkaProducer
@@ -18,7 +19,7 @@ def hello():
     
     producer = KafkaProducer(bootstrap_servers=ip)
     producer.send('test', b"big boss sea started")
-
+    time.sleep(10)
   
 
     return "Message sent"
