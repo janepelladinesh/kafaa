@@ -6,5 +6,5 @@ RUN pip install gunicorn
 ARG ip=10.128.1.245:9092
 ENV  ipa=$ip
 COPY . /
-EXPOSE 8081
+EXPOSE 8080
 CMD python /index.py $ipa
