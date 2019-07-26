@@ -23,8 +23,7 @@ def hello():
     b="new messages:\n"
     for message in consumer:
         print(message.value)
-        print '\n'
-        k+=message.value
+        k+=message.value+"\n"
         b=message.value
     c=k+"\n"+b
 
