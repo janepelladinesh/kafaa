@@ -20,12 +20,14 @@ def hello():
     consumer.subscribe(['test'])
 
     k="old messages:\n"
-    b="new messages:\n"
+    a="new messages:\n"
+    b=""
     for message in consumer:
         print(message.value)
         k+=message.value+"\n"
         b=message.value
-    c=k+"\n"+b
+    a+=b
+    c=k+"\n"+a
 
 
     return c
