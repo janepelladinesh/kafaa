@@ -1,10 +1,17 @@
+# Install  python to run the python script
 FROM python:2
-RUN pip install kafka
-RUN pip install Flask
-RUN pip install gunicorn
 
-ARG ip='apache-kafka'
-ENV  service=$ip
+#install kafka ,flask ,gunicorn  libraries of python
+
+RUN  pip install kafka && pip install Flask && pip install gunicorn
+ARG service_name='apache-kafka'
+
+# set the env virable ,which will be given while creating the application
+
+ENV  service=$service_name
 COPY . /
 EXPOSE 8080
+
+#run the python script
+
 CMD python /index.py $service
