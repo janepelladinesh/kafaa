@@ -19,10 +19,15 @@ def hello():
                              consumer_timeout_ms=1000)
     consumer.subscribe(['test'])
 
-    k="messages:"
+    k="old messages:\n"
+    b="new messages:\n"
     for message in consumer:
         print(message.value)
+        print '\n'
         k+=message.value
+        b=message.value
+    c=k+"\n"+b
+
 
     return k
 
